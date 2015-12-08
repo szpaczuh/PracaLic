@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Home page</title>
+    
+
+
+        
+            <link href="../css/teacherJumbotron.css" rel="stylesheet" type="text/css"/>
+
+    <% include ./partials/headerTeacher.ejs %>
+
+                    
+
+
+</head>
+
+<body class="container">
+
+    <header>
+        <% include /partials/headIndex.ejs %>
+    </header>
+   
+        <ul>
+            <% for(var i=0; i<teachers.length; i++) {%>
+            <div class="jumbotron">
+                
+              <div>
+                <%if(teachers[i].local.avatar && teachers[i].local.avatar.data) {%>
+                    <img src="data:<%= teachers[i].local.avatar.contentType %>;base64,<%= teachers[i].local.avatar.data.toString('base64') %>">
+                    <%} else {%>
+                        <img src="../images/defaultAvatar.png">
+                        <%}%>
+            </div>
+                <div class="for">
+                <br>
+                <b>Email: </b><%=teachers[i].local.email %>
+                <br>
+                <b>Miasto: </b><%=teachers[i].local.city %>
+               
+            
+                
+                <br>
+               
+            </div>
+            </div>
+           
+            <% } %> 
+        </ul>
+
+    </div>
+</body>
+
+</html>

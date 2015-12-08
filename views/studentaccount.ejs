@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <% include ./partials/headStudent.ejs %>
+         <link href="../css/junbomycourses.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="container">
+
+<header>
+    <% include ./partials/headerStudent.ejs %>
+</header>
+<h1>Dodaj avatar:</h1>
+     <div class="jumbotron">
+<div>
+<%if(user.local.avatar && user.local.avatar.data) {%>
+    <img src="data:<%= user.local.avatar.contentType %>;base64,<%= user.local.avatar.data.toString('base64') %>">
+    <%} else {%>
+    <img src="../images/defaultAvatar.png">
+<%}%>
+</div>
+
+<form id="imageForm" action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="imageUploader" accept="image/*"/>
+    <button type="submit">Upload</button>
+</form>
+</div>
+<h1>Edytuj konto:</h1>
+
+<form action="/changeaccount" method="post">
+    <div class="jumbotron">
+    <label>Imie</label>
+        <div>
+        
+        <input type="text" name="firstName" value="<%= user.local.name %>">
+    </div>
+   <br>
+        <label>Nazwisko</label>
+    <div>
+        
+        <input type="text" name="surname" value="<%= user.local.surname %>">
+    </div>
+    <br/>
+    <section class="round-border">
+
+        <div>
+            <button type="button" href="#collapse2" class="toggle">Change password</button>
+
+        </div>
+        <div id="collapse2" style="display:none">
+            <input type="password" name="password">
+        </div>
+        
+    </section>
+    <br>
+
+    <button type="submit">Change</button>
+        </div>
+</form>
+
+<footer>
+    <% include ./partials/footer.ejs %>
+</footer>
+    
+</body>
+<script src="/js/jquery.min.js"></script>
+<script src="../scripts/student.js"></script>
+</html>

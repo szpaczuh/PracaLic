@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Home page</title>
+        <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    
+ <%if(user !== undefined){ %>
+   <% include /partials/headerIndexStudent.ejs %>  
+   <%} else {%>
+   
+      <% include /partials/notlogged.ejs %> 
+       <% }%>
+           
+       
+    </head>
+
+<body class="container">
+
+
+
+   <header>   <% include /partials/headIndex.ejs %> </header>
+    <div class="jumbotron">
+    Nie masz jeszcze konta? Zarejestruj się!</br>
+    <a id="register" href="/register">Register</a>
+
+    </div>
+</body>
+
+</html>

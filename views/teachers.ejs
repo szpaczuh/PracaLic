@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Nauczyciele</title>
+<link href="../css/register.css" rel="stylesheet" type="text/css"/>
+<link href="../css/notloggedJumbo.css" rel="stylesheet" type="text/css"/>
+    <%if(user !==undefined){ %>
+        <% include /partials/headerIndexStudent.ejs %>
+            <%} else {%>
+
+                <% include /partials/notlogged.ejs %>
+                    <% }%>
+
+
+</head>
+
+<body class="container">
+
+    <header>
+        <% include /partials/headIndex.ejs %>
+    </header>
+    
+        <ul>
+            <% for(var i=0; i<teachers.length; i++) {%>
+            <div class="jumbotron">
+                 
+                <%if(teachers[i].local.avatar && teachers[i].local.avatar.data) {%>
+                    <img src="data:<%= teachers[i].local.avatar.contentType %>;base64,<%= teachers[i].local.avatar.data.toString('base64') %>">
+                    <%} else {%>
+                        <img src="../images/defaultAvatar.png">
+                        <%}%>
+            <div class = "for">
+                <b> Email: </b><%=teachers[i].local.email %>
+                <br>
+               
+                <b> Miasta: </b>
+                <% for(var j=0; j<teachers[i].local.cities.length; j++) {%>
+                <%=teachers[i].local.cities[j] %><% if(j<teachers[i].local.cities.length-1){%>,<% } %> 
+                <% }%>
+                <br>
+                <b> Przedmiot: </b><%=teachers[i].local.subject %></b>
+                <br>
+                  <%if(user !==undefined){ %>
+            <b><a href="/opinion/<%= teachers[i].local.email%>">Wystaw Opinię!</a></b>
+            <br>
+            <%} else {%>
+                    <% }%>
+                   
+                <br>
+               
+            
+              </div>
+           </div>
+            <% } %> 
+        </ul>
+
+    
+</body>
+
+ <footer>
+        <% include ./partials/footer.ejs %>
+    </footer>
+
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Zaloguj</title>
+    <link href="../css/login.css" rel="stylesheet" type="text/css" />
+
+    <% include ./partials/notlogged.ejs %>
+</head>
+
+<body class="container">
+    <header>
+        <% include ./partials/headIndex.ejs %>
+    </header>
+
+    <div class="jumbotron">
+        <h2>Logowanie</h2>
+        <% if(message.length> 0) { %>
+            <!-- bajerek dla ejsa, ogolnie jak bedzie error w loginie to tutaj pojdzie render -->
+            <div>
+                <%=message %>
+            </div>
+            <% } %>
+
+                <form action="/login" method="post">
+                    <div class="ema">
+                        <label>Email</label>
+                        <input type="email" name="email">
+                    </div>
+                    <div class="pass">
+                        <label>Password</label>
+                        <input type="password" name="password">
+                    </div>
+                    <br>
+                    <button type="submit">Login</button>
+                </form>
+                <br>
+                <p>Nie masz konta? <a href="/register">Zarejestruj sie!</a> </p>
+    </div>
+</body>
+<footer>
+    <% include ./partials/footer.ejs %>
+</footer>
+
+</html>

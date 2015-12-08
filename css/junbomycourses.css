@@ -1,0 +1,39 @@
+.jumbotron{
+margin-left: auto;
+    margin-right: auto;
+width:400px;
+height: auto;  
+position: relative;
+    right: 20px;;
+}
+
+
+div{
+text-align: center;
+
+}
+
+
+h2{
+text-align: center;
+
+}
+
+#img1{
+width: 200px;
+    height: 200px;
+
+}
+
+#citiesCheck{
+width: 20px;
+display:inline-block;
+position: relative;
+left: -20px;
+    text-align: right;
+    vertical-align: bottom;
+}
+
+.miasta{
+vertical-align: text-top;
+}

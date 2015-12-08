@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Our Courses</title>
+  
+    <% include ./partials/headStudent.ejs %>
+<link href="../css/opinionsJumbotron.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body class="container">
+    <header>
+        <% include ./partials/headerStudent.ejs %>
+    </header>
+    <h1>Opinie :</h1>
+    <ul>
+        <% for(var i=0; i<opinions.length; i++) {%>
+        <div class="jumbotron">
+            <div class = "for">
+            <br>
+              <b>Student: </b><%=opinions[i].student %>
+            <br>
+                <b>Nauczyciel: </b><%=opinions[i].teacher %>
+            <br>
+               <b> Opinia: </b><%=opinions[i].opinion %>
+            <br>
+
+           
+
+            <b><a href="/usunOpinion/<%= opinions[i].id %>">Usuń tą opinię</a></b>
+
+            <br>
+                </div>
+            </div>
+            <% } %>
+    </ul>
+   
+    <footer>
+      
+
+       
+        <% include ./partials/footer.ejs %>
+    </footer>
+   
+</body>
+
+</html>

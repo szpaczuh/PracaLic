@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ./partials/headStudent.ejs %>
+    
+</head>
+
+<body class="container">
+
+
+    <header>
+        <% include ./partials/headerStudent.ejs %>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <form action="/opinion" method="post" name="opinion-form">
+            <p>Wystaw opinię nauczycielowi <%=teacher%></p>
+            <input type="hidden" name="teacher" value="<%= teacher%>">
+             <textarea rows="4" cols="40" name="opinion">Type Your opinion here</textarea>
+             <br>
+             <button type="submit">Wystaw!</button>
+        </div>
+    </main>
+
+
+    <footer>
+        <% include ./partials/footer.ejs %>
+    </footer>
+</body>
+
+</html>

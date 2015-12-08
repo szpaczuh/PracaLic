@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Our Courses</title>
+    <link href="../css/register.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/courseJumbtron.css" rel="stylesheet" type="text/css"/>
+    <% include ./partials/headStudent.ejs %>
+
+</head>
+
+<body class="container">
+<header>
+    <% include ./partials/notlogged.ejs %>
+</header>
+<% if(courses.length === 0) { %>
+<div class="jumbotron">
+    NIE ZNALEZIONO!
+</div>
+<%} else {%>
+<ul>
+    <% for(var i = 0; i < courses.length; i++) { %>
+    <div class="jumbotron">
+        <b>Email: </b><%= courses[i].teacher %>
+        <br>
+       <b> Nazwa: </b><%= courses[i].courseInfo.name %>
+        <br>
+       <b> Przedmiot: </b><%= courses[i].courseInfo.subject %>
+        <br>
+       <b> Opis: </b><%= courses[i].courseInfo.description %>
+        <br>
+       <b> <a href="/login">Zaloguj się aby móc uczęszczać na kurs!</a></b>
+    </div>
+    <% } %>
+</ul>
+<%}%>
+
+<footer>
+    <% include ./partials/footer.ejs %>
+</footer>
+</body>
+
+</html>

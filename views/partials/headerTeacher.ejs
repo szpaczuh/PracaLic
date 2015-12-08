@@ -1,0 +1,46 @@
+<link href="../css/glyphicon.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/teacher">
+                <span class="glyphicon glyphicon-user"><p id="icon">Witaj <%= user.local.email %></</span>
+            </a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a href="/">Strona główna</a></li>
+            <li><a href="/teacher">Profil</a></li>
+    
+
+            <li><a href="/teacheraccount">Konto</a></li>
+            <li><a href="/contactTeacher">Kontakt</a></li>
+            <li>
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Kursy i nauczyciele
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/addcourse">Dodaj kurs</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/mycourses">Moje kursy</a>
+                    </li>
+                    
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/teachersTeachers">Nauczyciele</a>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/courseTeacher">Wszystkie kursy</a>
+                       
+                    </li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="/searchTeacher">Szukaj</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="/logout">Wyloguj</a></li>
+            
+        </ul>
+      
+    </div>
+</nav>

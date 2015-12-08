@@ -1,0 +1,41 @@
+{
+  "name": "PortalEdukacyjnydlakorepetytorow",
+  "version": "0.0.1",
+  "description": "To jest praca licencjacka",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1.36",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.13.1",
+    "bsalerts": "^0.1.5",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.3.5",
+    "ejs": "^1.0.0",
+    "express": "^4.12.3",
+    "express-session": "^1.11.3",
+    "jquery-image-upload": "^1.1.0",
+    "method-override": "^2.3.3",
+    "mongodb": "^2.0.35",
+    "mongoose": "^4.0.6",
+    "morgan": "^1.6.0",
+    "passport": "^0.2.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^1.0.0",
+    "serve-static": "^1.9.2",
+    "socket.io": "^1.3.5"
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amQel/PracLic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amQel/PracLic/issues"
+  },
+  "homepage": "https://github.com/amQel/PracLic"
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>my courses</title>
+
+    <% include ./partials/headTeacher.ejs %>
+ <link href="../css/details.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="container">
+
+
+<header>
+    <% include ./partials/headerTeacher.ejs %>
+</header>
+<ul>
+<% for(var j = 0; j < studentsToJoin.length; j++) { %>
+<% if(j == 0) { %>
+<h3>Użytkownicy, którzy chcą dołączyć do twoich kursów:</h3>
+<% } %>
+    <div id="pierwszy" class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><b>Użytkownik <%= studentsToJoin[j].email %></b> </div>
+
+  <!-- Table -->
+  <table class="table">
+   <b>Chce dołączyć do Twojego kursu z przedmiotu <%=studentsToJoin[j].name %></b> <br>
+       <a href="/zaakceptuj/<%= studentsToJoin[j].email %>/<%= studentsToJoin[j].id %>">Zaakceptuj</a> <br>
+       <a href="/odrzuc/<%= studentsToJoin[j].email %>/<%= studentsToJoin[j].id %>">Odrzuć</a>
+  </table>
+</div>
+
+<% } %>
+</ul>
+<ul>
+    <% for(var i = 0; i < courses.length; i++) { %>
+    <div class="left">
+    <div id="left"class="jumbotron">
+  
+     <b>Nazwa kursu: </b>   <%= courses[i].courseInfo.name %>
+    <br>
+      <b>Przedmiot: </b>  <%= courses[i].courseInfo.subject %>
+     <br>
+      <b>Opis: </b>  <%= courses[i].courseInfo.description %>
+     <br>
+      <b>Cena za godzine: </b>  <%= courses[i].courseInfo.costPerHour %>
+    <br>
+        
+      <b>Szkoła: </b>  <%= courses[i].level %>
+     <br>
+      <b>Materiały do pobrania: </b>  <ul>
+            <% for(var j = 0; j < courses[i].files.length; j++) { %>
+                <a href="<%= courses[i].files[j].url %>"><%= courses[i].files[j].name %></a><br>
+            <%}%>
+        </ul>
+    
+
+    <br>
+
+    <form action="/autenticate" method="post" id="autenticator">
+        <label id="lbl" name="lbl" style="display:none;">Potwierdź Hasłem :</label>
+        <% if(message.length > 0){ %>
+        <p>
+            <%= message %>
+        </p>
+        <% } %>
+        <input type="password" id="pwd" name="pwd" style="display:none;">
+        <br>
+        <input type="text" name="courseId" value="<%= courses[i].id %>" style="display:none;" readonly>
+        <br>
+        <button type="submit">Usuń Ten Kurs</button>
+    </form>
+    <br><br><br>
+
+    <form action="/dodajNewsa" method="post">
+</div>
+        </div>
+    <div class="right">
+    <div id="right" class="jumbotron">
+        
+    <form action="/dodaj" method="post">
+        
+       <label>Tytuł Informacji</label>
+        <br>
+        <input type="text" name="newsTittle">
+        <br>
+        <label>Wiadomość</label>
+        <textarea name="newInfo" id="newInfo" cols="30" rows="10"></textarea>
+        <input type="text" name="courseId" value="<%= courses[i].id %>" style="display:none;" readonly>
+        <button type="submit">Wyślij do uczniów</button>
+    </form>
+    <br/>
+     <br>
+    <form action="/addFile" method="post" id="uploader" enctype="multipart/form-data">
+        <input type="text" name="courseId" value="<%= courses[i].id %>" style="display:none;" readonly>
+        <p id="problem"></p>
+        <input type="file" id="upload" name="fileUploader"/>
+        <br>
+        <button type="submit">Dodaj Plik Do Kursu</button>
+    </form>
+        </div>
+        </div>
+    <% } %>
+
+</ul>
+
+
+
+<footer>
+    <% include ./partials/footer.ejs %>
+</footer>
+</body>
+
+<script src="/js/jquery.min.js"></script>
+<script src="../scripts/details.js"></script>
+
+</html>

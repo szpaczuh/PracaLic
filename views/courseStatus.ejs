@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ./partials/headStudent.ejs %>
+    
+</head>
+
+<body class="container">
+
+
+    <header>
+        <% include ./partials/headerStudent.ejs %>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h1>Witaj studencie!</h1>
+            <p>Kursy, na których zaakceptowanie oczekujesz :</p>
+        
+            <br>
+            <h2>Kursy: </h2>
+            
+            <% for(var i=0; i<courses.length; i++) {%>
+             
+            
+                <h3>Tytuł Kursu: <%=courses[i].tittle %></h3>
+            
+           
+                Opis Kursu: <%=courses[i].message %>
+          
+            <br>
+       
+            <% } %>
+        </div>
+    </main>
+
+
+    <footer>
+        <% include ./partials/footer.ejs %>
+    </footer>
+</body>
+
+</html>

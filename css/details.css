@@ -1,0 +1,39 @@
+#pierwszy{
+text-align: center;
+}
+
+h3{
+text-align: center;
+}
+
+
+
+
+.left{
+
+margin-left: auto;
+    margin-right: auto;
+width:300px;
+height: auto; 
+    text-align: center;
+    vertical-align: text-bottom;
+    position: relative;
+    right: 400px;
+    
+}
+
+.right{
+
+margin-left: auto;
+    margin-right: auto;
+width:400px;
+height: auto; 
+    text-align: center;
+    vertical-align: text-bottom;
+    position: relative;
+    bottom: 430px;
+    left: 200px;
+    
+}
+
+

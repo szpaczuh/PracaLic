@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nasze kursy</title>
+
+    <% include ./partials/headStudent.ejs %>
+        <link href="../css/courseJumbtron.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="container">
+    <header>
+        <% include ./partials/headerStudent.ejs %>
+    </header>
+    <h1>Kurs z przedmiotu <%=courses.courseInfo.subject %> </h1>        
+        <div class="jumbotron">
+            <div class="for"> 
+                <br>
+                <b> Kurs: </b><%=courses.courseInfo.name %>
+                <br>
+                <b>Email: </b><%=courses.teacher %>
+                <br>
+               <b> Telefon: </b><%=courses.courseInfo.phone %>
+                <br>
+                          <b>  Opis: </b><%=courses.courseInfo.description %>
+                                <br>
+                             <b>   Cena za godzinę: </b><%=courses.courseInfo.costPerHour %> zł
+                                    <br>
+                                <b>    Szkoła: </b><%=courses.level %>
+                                        <br>
+                                      
+                                <b>Dostępne Materiały : </b>
+                                       <ul>
+            <% for(var j = 0; j < courses.files.length; j++) { %>
+               <% if(courses.files[j].name != '') { %>
+                <li><a href="<%= courses.files[j].url %>"><%= courses.files[j].name %></a></li>
+                <%}%>
+            <%}%>
+        </ul>
+                                        <br>
+                                        <b>      <a href="/wypisz/<%= courses.id %>">Wypisz mnie z tego kursu!</a></b>
+            </div>
+             </div>
+             
+            </div>
+           
+            <footer>
+
+
+
+                <% include ./partials/footer.ejs %>
+            </footer>
+
+</body>
+
+</html>

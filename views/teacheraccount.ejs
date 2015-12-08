@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <% include ./partials/headTeacher.ejs %>
+
+  <meta charset="utf-8">
+
+
+</head>
+
+<body class="container">
+
+    <header>
+        <% include ./partials/headerTeacher.ejs %>
+            <link href="../css/junbomycourses.css" rel="stylesheet" type="text/css" />
+    </header>
+
+    <%if(message.length > 0) {%>
+        <div class="alert alert-danger">Musisz zaktualizowac swoje konto, by dodawac kursy.</div>
+    <%}%>
+
+    <h2>Dodaj avatar:</h2>
+
+    <div class="jumbotron">
+
+        <div>
+            <% if(user.local.avatar && user.local.avatar.data) { %>
+                <img id="img1" src="data:<%= user.local.avatar.contentType %>;base64,<%= user.local.avatar.data.toString('base64') %>">
+                <% } else { %>
+                    <img src="../images/defaultAvatar.png">
+                    <% } %>
+        </div>
+
+        <form id="imageForm" action="/upload" method="post" enctype="multipart/form-data">
+            <br>
+            <input type="file" name="imageUploader" />
+            <br>
+            <button id="guzik" type="submit">Upload</button>
+        </form>
+    </div>
+    <h1>Edytuj swoje informacje:</h1>
+    <div class="jumbotron">
+        <form action="/changeaccountTeacher" method="post">
+            <label>Imie</label>
+            <div>
+                
+                <input type="text" name="firstName" value="<%= user.local.name %>">
+            </div>
+            <br>
+            <label>Nazwisko</label>
+            <div>
+                
+                <input type="text" name="surname" value="<%= user.local.surname %>">
+            </div>
+            <br>
+             <label>Telefon</label>
+            <div>
+               
+                <input type="text" name="phone" value="<%= user.local.phone %>" />
+            </div>
+            <br>
+            <button type="button" class="toggleCities">Ustaw miasta</button>
+            <div id="changeCities" style="display: none;">
+                <div>
+                    <br>
+                    <label>Województwo</label>
+                    <br>
+                    <select name="province">
+
+                    </select>
+                </div>
+                <br>
+                 <label>Miasta</label>
+                <div class="miasta">
+                   
+
+                    <div id="citiesCheck">
+
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+            <br>
+            <section class="round-border">
+
+                <div>
+                    <button type="button" href="#collapse2" class="toggle">Zmien hasło</button>
+
+                </div>
+                <br>
+                <div id="collapse2" style="display:none">
+                    <input type="password" name="password">
+                </div>
+            </section>
+            <br>
+
+            <button type="submit">Zmień</button>
+    </div>
+    </form>
+
+    <footer>
+        <% include ./partials/footer.ejs %>
+    </footer>
+</body>
+<script src="/js/jquery.min.js"></script>
+<script src="../scripts/teacher.js"></script>
+
+</html>

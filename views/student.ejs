@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ./partials/headStudent.ejs %>
+    
+</head>
+
+<body class="container">
+
+
+    <header>
+        <% include ./partials/headerStudent.ejs %>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h1>Witaj studencie!</h1>
+            <p>Tutaj znajdziesz najlepsze korepetycje! Zapisz sie na kurs już teraz!</p>
+        
+            <br>
+            <h2>Nowości:</h2>
+            
+            <% for(var i=0; i<news.length; i++) {%>
+             
+            
+                <h3>Temat:<%=news[i].tittle %></h3>
+            
+           
+                <%=news[i].message %>
+                <a href="<%=news[i].url%>">Szczegóły</a>
+          
+            <br>
+       
+            <% } %>
+        </div>
+    </main>
+
+
+    <footer>
+        <% include ./partials/footer.ejs %>
+    </footer>
+</body>
+
+</html>

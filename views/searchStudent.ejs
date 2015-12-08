@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <% include ./partials/headStudent.ejs %>
+</head>
+
+<body class="container">
+<header>
+    <% include ./partials/headerStudent.ejs %>
+      <link href="../css/junbomycourses.css" rel="stylesheet" type="text/css" />
+</header>
+<form action="/search" method="post" name="search-form">
+    <div class="jumbotron">
+        <div class="province">
+
+            <label>Województwo</label>
+
+            <select name="province">
+
+            </select>
+        </div>
+        <br>
+        <label>Miasto</label>
+
+        <select name="city">
+
+        </select>
+        <br>
+        <br>
+        <label>Szkoła</label>
+
+        <div class="education">
+
+            <select name="level">
+
+            </select>
+        </div>
+        <br>
+
+        <div>
+            <label>Subject</label>
+            <select name="subject">
+            </select>
+        </div>
+        <br>
+
+        <div>
+            <label>Price</label>
+            <br/>
+            <label>Minimum</label>
+            <br/>
+            <input name="minimum" type="number" min="0"/>
+            <br/>
+            <label>Maximum</label>
+            <br/>
+            <input name="maximum" type="number" min="0"/>
+        </div>
+        <button type="submit" class="btn btn-success">Search</button>
+    </div>
+
+</form>
+</body>
+<script src="/js/jquery.min.js"></script>
+<script src="../scripts/search.js"></script>
+<footer>
+    <% include ./partials/footer.ejs %>
+</footer>
+</html>

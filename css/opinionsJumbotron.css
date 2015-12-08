@@ -1,0 +1,61 @@
+
+.jumbotron{
+
+margin-left: auto;
+    margin-right: auto;
+width:300px;
+height: auto; 
+    text-align: center;
+    vertical-align: text-bottom;
+    
+    
+}
+
+.for{
+position: relative;
+    
+    top: -40px;
+}
+
+
+.province{
+position: relative;
+    right: 10px;
+}
+
+.city {
+position: relative;
+ right: 77px;
+}
+
+.education{
+position: relative;
+ right: 16px;
+
+}
+
+.city1 {
+position: relative;
+ right: 67px;
+}
+
+
+.sub{
+position: relative;
+right: 10px;
+    
+    
+}
+
+.school{
+position: relative;
+    right: 10px;
+    
+    
+    
+}
+
+.citySearch{
+position: relative;
+      right: 10px;
+}

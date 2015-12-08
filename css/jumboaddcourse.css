@@ -1,0 +1,30 @@
+.jumbotron{
+margin-left: auto;
+    margin-right: auto;
+width:400px;
+height: auto;    
+}
+
+
+div{
+text-align: center;
+
+}
+
+textarea{
+
+    border: 2px solid;
+    padding: 20px; 
+    width: 300px;
+    resize: both;
+    overflow: auto;
+
+
+
+}
+
+h2{
+text-align: center;
+
+}
+
